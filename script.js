@@ -7,6 +7,8 @@ let cooldown = false;
 let autoroll = false
 let autorollInterval;
 
+/* Rarities */
+
 
 /* Roll function */
 function roll() {
@@ -21,7 +23,10 @@ function roll() {
             cooldown = false;
         }, 5000);
         setTimeout(() => {
-             
+             let roll = Math.floor(Math.random() * 10000) + 1;
+                if (roll == 5000) {
+                    common ++;
+                }
            
 
         
@@ -38,7 +43,7 @@ autorollButton.addEventListener("click", () => {
         autoroll = true;
         autorollButton.textContent = "ON";
         console.log("Autoroll enabled.");
-        autorollInterval = setInterval(roll, 5500)}
+        autorollInterval = setInterval(roll, 5000)}
         else{autoroll = false;
         autorollButton.textContent = "OFF";
         console.log("Autoroll disabled.");
