@@ -6,7 +6,7 @@ Valient RNG is a browser-based RNG game where players roll mysterious Vessels, c
 
 **GitHub Pages:**  
 [Play Valient RNG Here]
-
+https://tophatedits-afk.github.io/Valient-RNG/
 
 ---
 
