@@ -6,7 +6,8 @@ const commonc = document.getElementById("commonc");
 const rarec = document.getElementById("rarec");
 const epicc = document.getElementById("epicc");
 const legendaryc = document.getElementById("legendaryc");
-const mythicalc = document.getElementById("mythicalc");
+const mythicc = document.getElementById("mythicc");
+const lastRoll = document.getElementById("lastRoll");
 let count = 0;
 let cooldown = false;
 let autoroll = false;
@@ -17,7 +18,7 @@ let common = 0;
 let rare = 0;
 let epic = 0;
 let legendary = 0;
-let mythical = 0;
+let mythic = 0;
 
 /* UpdateUI */
 function update() {
@@ -25,7 +26,7 @@ function update() {
     rarec.textContent = rare;
     epicc.textContent = epic;
     legendaryc.textContent = legendary;
-    mythicalc.textContent = mythical;
+    mythicc.textContent = mythic;
 
 }
 
@@ -46,30 +47,35 @@ function roll() {
                 if (roll >= 3750) {
                     common ++;
                     console.log("Rolled Common.");
+                    lastRoll.textContent = "Common";
                     update();
                 }
                     else
                 {if (roll >= 3500) {
                     rare ++;
                     console.log("Rolled Rare.");
+                    lastRoll.textContent = "Rare";
                     update();
                 }
                     else
                 {if (roll >= 2750) {
                     epic ++;
                     console.log("Rolled Epic.");
+                    lastRolltextContent = "Epic";
                     update();
                 }
                     else
                 {if (roll >= 2250) {
                     legendary ++;
                     console.log("Rolled Legendray.");
+                    lastRoll.textContent = "Legendary";
                     update();
                 }
                     else
                 {if (roll >= 2000) {
-                    mythical ++;
-                    console.log("Rolled Mythical.");
+                    mythic ++;
+                    console.log("Rolled Mythic.");
+                    lastRoll.textContent = "Mythic";
                     update()
                 }
                     else
