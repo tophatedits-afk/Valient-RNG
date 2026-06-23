@@ -104,7 +104,7 @@ function roll() {
                     lastRoll.textContent = "Mythic";
                     update();
                 }
-                    else {
+                    else { 
                     console.log("Rolled a formalie.");
                     formaliesl();
                 }
