@@ -7,6 +7,9 @@ const rarec = document.getElementById("rarec");
 const epicc = document.getElementById("epicc");
 const legendaryc = document.getElementById("legendaryc");
 const mythicc = document.getElementById("mythicc");
+const solarc = document.getElementById("solarc");
+const lunarc = document.getElementById("lunarc");
+const eclipsec = document.getElementById("eclipsec")
 const lastRoll = document.getElementById("lastRoll");
 let count = 0;
 let cooldown = false;
@@ -19,6 +22,9 @@ let rare = 0;
 let epic = 0;
 let legendary = 0;
 let mythic = 0;
+let solar = 0;
+let lunar = 0;
+let eclipse = 0;
 
 /* UpdateUI */
 function update() {
@@ -27,7 +33,27 @@ function update() {
     epicc.textContent = epic;
     legendaryc.textContent = legendary;
     mythicc.textContent = mythic;
+    solarc.textContent = solar;
+    lunarc.textContent = lunar;
+    eclipsec.textContent = eclipse;
 
+}
+
+/* Formalie Function*/
+function formaliesl() {
+    let sl = Math.floor(Math.random() * 2) + 1;
+        if (sl === 1) {
+            solar ++;
+            console.log("Rolled Solar.")
+            lastRoll.textContent = "Solar";
+            update();
+        }
+            else {
+                lunar ++;
+                console.log("Rolled Lunar.");
+                lastRoll.textContent = "Lunar";
+                update();
+            }
 }
 
 /* Roll function */
@@ -44,45 +70,45 @@ function roll() {
         }, 5000);
              let roll = Math.floor(Math.random() * 5000) + 1;
                 console.log(roll);
-                if (roll >= 3750) {
+                if (roll >= 3000) {
                     common ++;
                     console.log("Rolled Common.");
                     lastRoll.textContent = "Common";
                     update();
                 }
                     else
-                {if (roll >= 3500) {
+                {if (roll >= 1500) {
                     rare ++;
                     console.log("Rolled Rare.");
                     lastRoll.textContent = "Rare";
                     update();
                 }
                     else
-                {if (roll >= 2750) {
+                {if (roll >= 500) {
                     epic ++;
                     console.log("Rolled Epic.");
-                    lastRolltextContent = "Epic";
+                    lastRoll.textContent = "Epic";
                     update();
                 }
                     else
-                {if (roll >= 2250) {
+                {if (roll >= 100) {
                     legendary ++;
                     console.log("Rolled Legendray.");
                     lastRoll.textContent = "Legendary";
                     update();
                 }
                     else
-                {if (roll >= 2000) {
+                {if (roll >= 11) {
                     mythic ++;
                     console.log("Rolled Mythic.");
                     lastRoll.textContent = "Mythic";
-                    update()
+                    update();
                 }
-                    else
-                {if (roll <= 1999) {
-                    console.log("Nothing has been set for under 2000.");
+                    else {
+                    console.log("Rolled a formalie.");
+                    formaliesl();
                 }
-                 }}}}};
+                 }}}};
 };
 /* RollClick */
 rollButton.addEventListener("click", () => {
